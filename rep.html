@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Republic Day of India – Constitutional significance, national observances, and democratic values.">
+    <meta name="author" content="India">
+    <title>Republic Day of India</title>
+    <style>
+        /* =====================================
+   GLOBAL RESET & VARIABLES
+===================================== */
+        
+         :root {
+            --saffron: #ff9933;
+            --white: #ffffff;
+            --green: #138808;
+            --blue: #0a3d91;
+            --dark: #020617;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-snap-type: y mandatory;
+        }
+        
+        body {
+            font-family: "Segoe UI", system-ui, sans-serif;
+            background: black;
+            color: #eaeaea;
+            line-height: 1.7;
+        }
+        /* =====================================
+   VIDEO BACKGROUND (FLAG.MP4)
+===================================== */
+        
+        video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -5;
+            opacity: 1.35;
+            filter: saturate(1.2) contrast(1.1);
+            pointer-events: none;
+        }
+        /* Infinite play illusion */
+        
+        video {
+            animation: videoPulse 20s linear infinite;
+        }
+        
+        @keyframes videoPulse {
+            0%,
+            100% {
+                opacity: 0.35;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        /* =====================================
+   AUTO REPUBLIC NIGHT MODE (AFTER 7PM)
+===================================== */
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: radial-gradient(circle at top, #020617, #000);
+            }
+            video {
+                opacity: 0.25;
+                filter: brightness(0.7) contrast(1.2);
+            }
+        }
+        /* =====================================
+   ASHOKA CHAKRA – 3D PURE CSS
+===================================== */
+        
+        body::before {
+            content: "☸";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%);
+            font-size: min(45vw, 420px);
+            color: rgba(1, 7, 16, 0.18);
+            animation: chakraSpin 18s linear infinite;
+            z-index: -2;
+        }
+        
+        @keyframes chakraSpin {
+            from {
+                transform: translate(-50%, -50%) rotateY(0deg) rotateZ(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        /* =====================================
+   FLOATING TRICOLOR LIGHT STREAKS
+===================================== */
+        
+        body::after {
+            content: "";
+            position: fixed;
+            inset: -50%;
+            background: linear-gradient(120deg, transparent 30%, rgba(255, 153, 51, 0.18) 40%, transparent 55%), linear-gradient(-120deg, transparent 30%, rgba(19, 136, 8, 0.18) 40%, transparent 55%);
+            animation: drift 35s linear infinite;
+            z-index: -3;
+        }
+        
+        @keyframes drift {
+            from {
+                transform: translateY(0) rotate(0deg);
+            }
+            to {
+                transform: translateY(25%) rotate(360deg);
+            }
+        }
+        /* =====================================
+   HERO TITLE
+===================================== */
+        
+        h1 {
+            text-align: center;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            letter-spacing: 0.25em;
+            margin: 4rem 1rem;
+            color: white;
+            text-shadow: 0 0 25px rgba(173, 90, 7, 0.8), 0 0 50px rgba(19, 136, 8, 0.8);
+        }
+        /* =====================================
+   POSTER SECTIONS (SCROLL SNAP)
+===================================== */
+        
+        div[class] {
+            scroll-snap-align: center;
+            margin: 6vh auto;
+            padding: clamp(1.8rem, 4vw, 3rem);
+            max-width: 1100px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+            border-radius: 22px;
+            position: relative;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 0 40px 100px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(14px);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+        /* =====================================
+   NEON TRICOLOR EDGE GLOW
+===================================== */
+        
+        div[class]::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 24px;
+            background: linear-gradient(90deg, var(--saffron), white, var(--green));
+            filter: blur(18px);
+            opacity: 0.65;
+            z-index: -1;
+        }
+        /* =====================================
+   HOVER-ACTIVATED PATRIOTIC ANIMATION
+===================================== */
+        
+        div[class]:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 40px rgba(255, 153, 51, 0.6), 0 0 80px rgba(19, 136, 8, 0.5);
+        }
+        /* =====================================
+   TEXT STYLING
+===================================== */
+        
+        h2 {
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 0 0 15px rgba(10, 61, 145, 0.6);
+            padding-left: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--saffron);
+            margin: 1.2rem 0 0.5rem;
+            padding-left: 2rem;
+        }
+        
+        p,
+        li {
+            color: #e0e0e0;
+            padding-left: 2.5rem;
+        }
+        
+        ul,
+        ol {
+            padding-left: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        /* =====================================
+   FOOTER – POSTER END
+===================================== */
+        
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+            background: linear-gradient(to top, #000, transparent);
+            color: #aaa;
+        }
+        
+        footer span {
+            display: block;
+            margin-top: 0.6rem;
+            letter-spacing: 0.25em;
+            color: white;
+            text-shadow: 0 0 20px rgba(10, 61, 145, 0.7);
+        }
+        /* =====================================
+   RESPONSIVE TUNING
+===================================== */
+        
+        @media (max-width: 768px) {
+            h1 {
+                letter-spacing: 0.15em;
+            }
+            div[class] {
+                margin: 4vh 1rem;
+            }
+        }
+        /* =====================================
+   ACCESSIBILITY – REDUCED MOTION
+===================================== */
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+            body::after,
+            body::before {
+                display: none;
+            }
+            video {
+                opacity: 0.2;
+            }
+        }
+        
+        button {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 260px;
+            /* prevents width jump */
+            padding: 12px 28px;
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #000;
+            background: linear-gradient( 90deg, #ff9933, #ffffff, #138808);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 0 6px rgba(255, 153, 51, 0.35), 0 0 12px rgba(19, 136, 8, 0.25);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        /* 🇮🇳 Chakra glow ring */
+        
+        button::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient( #ff9933, #ffffff, #138808, #ff9933);
+            filter: blur(8px);
+            opacity: 0.35;
+            z-index: -1;
+            transition: opacity 0.35s ease;
+        }
+        /* 🎖️ Hover patriotism (NO horizontal movement) */
+        
+        button:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 153, 51, 0.45), 0 0 20px rgba(19, 136, 8, 0.35);
+        }
+        
+        button:hover::before {
+            opacity: 0.55;
+        }
+        /* 🫡 Active (click) feel */
+        
+        button:active {
+            transform: translateX(-50%) scale(0.97);
+        }
+        /* ♿ Accessibility */
+        
+        button:focus-visible {
+            outline: 3px solid #0a3d91;
+            outline-offset: 4px;
+        }
+        /* 🌙 Night mode refinement */
+        
+        @media (prefers-color-scheme: dark) {
+            button {
+                color: #fff;
+            }
+        }
+        /* ♿ Reduced motion safety */
+        
+        @media (prefers-reduced-motion: reduce) {
+            button,
+            button::before {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video src="flag.mp4" autoplay muted loop playsinline></video>
+
+    <header>
+        <h1>Republic Day of India</h1>
+        <p><strong>26 January</strong> — Commemorating the Adoption of the Constitution of India</p>
+        <hr>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Constitutional Significance</h2>
+            <p>
+                Republic Day commemorates the formal adoption of the Constitution of India on
+                <time datetime="1950-01-26">26 January 1950</time>, marking India’s transition from a dominion under the British Crown to a sovereign, democratic republic. This event established the Constitution as the supreme legal authority, replacing
+                the Government of India Act, 1935.
+            </p>
+            <p>
+                The date 26 January was intentionally chosen to honor the
+                <em>Purna Swaraj</em> (Complete Independence) declaration of 1930, reaffirming India’s commitment to self-governance.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Formation and Framework of the Constitution</h2>
+            <ul>
+                <li>Drafted by the Constituent Assembly under the chairmanship of Dr. B. R. Ambedkar</li>
+                <li>Represents a synthesis of global constitutional principles adapted to Indian socio-political realities</li>
+                <li>Establishes the following foundational structures:</li>
+
+                <ol>
+                    <li>Parliamentary democracy</li>
+                    <li>Federal structure with unitary features</li>
+                    <li>Independent judiciary</li>
+                    <li>Rule of law and constitutional supremacy</li>
+                </ol>
+            </ul>
+            <p>
+                The Indian Constitution remains the longest written constitution of any sovereign nation.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. Political and Democratic Importance</h2>
+            <p>Republic Day symbolizes:</p>
+            <ul>
+                <li>The sovereignty of the people of India</li>
+                <li>Equality before law and universal adult franchise</li>
+                <li>Accountability of the state to constitutional norms</li>
+            </ul>
+            <p>
+                It reinforces the principle that authority flows from the Constitution, not from individuals or institutions.
+            </p>
+        </section>
+
+        <section>
+            <h2>4. National Ceremonial Observances</h2>
+
+            <article>
+                <h3>4.1 Republic Day Parade (New Delhi)</h3>
+                <ul>
+                    <li>Held at Kartavya Path</li>
+                    <li>Presided over by the President of India, the constitutional head of the state</li>
+                    <li>Key highlights include:</li>
+
+                    <ol>
+                        <li>Military contingents from the Army, Navy, and Air Force</li>
+                        <li>Display of indigenous defense capabilities</li>
+                        <li>Cultural tableaus from states and union territories</li>
+                    </ol>
+                </ul>
+                <p>
+                    A foreign head of state is invited as the Chief Guest, underscoring India’s diplomatic engagement.
+                </p>
+            </article>
+
+            <article>
+                <h3>4.2 National Salute</h3>
+                <ul>
+                    <li>The National Flag is unfurled with a 21-gun salute</li>
+                    <li>The National Anthem is performed following full ceremonial protocol</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>5. Honors and National Recognition</h2>
+            <p>
+                Republic Day is associated with the announcement of India’s highest civilian and gallantry awards.
+            </p>
+            <ol>
+                <li>Padma Awards (Padma Vibhushan, Padma Bhushan, Padma Shri)</li>
+                <li>Gallantry Awards including Param Vir Chakra and Ashoka Chakra</li>
+                <li>National Bravery Awards for exceptional courage displayed by children</li>
+            </ol>
+            <p>
+                These recognitions reinforce national values of service, courage, and excellence.
+            </p>
+        </section>
+
+        <section>
+            <h2>6. Cultural and Institutional Participation</h2>
+            <p>Across India:</p>
+            <ol>
+                <li>Government institutions conduct formal flag-hoisting ceremonies</li>
+                <li>Educational institutions organize academic and cultural programs</li>
+                <li>Public messaging emphasizes unity, civic responsibility, and national integrity</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>7. Symbolism and National Identity</h2>
+            <p>Key national symbols highlighted on Republic Day include:</p>
+            <ol>
+                <li>The Tricolor — symbolizing sacrifice, peace, and prosperity</li>
+                <li>The Ashoka Chakra — representing justice, progress, and constant motion</li>
+                <li>The National Anthem — expressing collective national consciousness</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>8. Contemporary Relevance</h2>
+            <ul>
+                <li>Evaluating the health of India’s democratic institutions</li>
+                <li>Reaffirming commitment to secularism, social justice, and inclusivity</li>
+                <li>Reinforcing civic duties alongside fundamental rights</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>9. Conclusion</h2>
+            <p>
+                Republic Day is not merely commemorative; it is institutional and introspective. It marks the day when India chose governance by constitutional principles over inherited authority, placing the rule of law at the center of national life.
+            </p>
+            <p>
+                Republic Day reasserts that India’s strength lies not only in its freedom, but in its enduring commitment to constitutional democracy.
+            </p>
+        </section>
+        <button onclick="window.location.href='constitutional_amendments.html'">
+    Constitutional Amendments
+</button>
+
+
+    </main>
+
+    <footer>
+        <hr>
+        <p>© 2026 | Republic Day of India</p>
+        <p><strong>Justice • Liberty • Equality</strong></p>
+    </footer>
+
+</body>
+
+</html>
