@@ -245,6 +245,20 @@
             animation: fadeInUp 0.6s ease both;
             display: flex;
             flex-direction: column;
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 60%;
+        }
+        
+        @keyframes appear {
+            from {
+                opacity: 0;
+                scale: 0.5;
+            }
+            to {
+                opacity: 1;
+                scale: 1;
+            }
         }
         
         .amendment::before {
@@ -515,7 +529,7 @@
                 <div class="stat-label">First Amendment</div>
             </div>
             <div class="stat-box">
-                <div class="stat-number">77 Years</div>
+                <div class="stat-number">75 Years</div>
                 <div class="stat-label">Amendment Timeline</div>
             </div>
         </div>
@@ -1258,5 +1272,8 @@
     </script>
 </body>
 
+</html>
+
+</html>
 
 </html>
